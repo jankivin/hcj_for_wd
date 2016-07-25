@@ -39,9 +39,6 @@ var showLoading = function (selector) {
 // Return substitute of '{{propName}}' 
 // with propValue in given 'string' 
 var insertProperty = function (string, propName, propValue) {
-  console.log(string);
-  console.log(propName);
-  console.log(propValue);
   var propToReplace = "{{" + propName + "}}";
   string = string
     .replace(new RegExp(propToReplace, "g"), propValue);
@@ -104,8 +101,6 @@ function buildAndShowHomeHTML (categories) {
       // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
       // variable's name implies it expects.
-      console.log("Kategoriat" + categories);
-      console.log("Kotiosoite " + homeHtml);
       var chosenCategoryShortName = chooseRandomCategory(categories);
       
 
@@ -120,8 +115,6 @@ function buildAndShowHomeHTML (categories) {
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet.
       // 
-      console.log(chosenCategoryShortName);
-      console.log(chosenCategoryShortName.short_name);
       var tempur = "'" + chosenCategoryShortName.short_name + "'";
       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", tempur);
       
@@ -159,7 +152,6 @@ dc.loadMenuCategories = function () {
 // Load the menu items view
 // 'categoryShort' is a short_name for a category
 dc.loadMenuItems = function (categoryShort) {
-  console.log(categoryShort);
   showLoading("#main-content");
   $ajaxUtils.sendGetRequest(
     menuItemsUrl + categoryShort,
@@ -227,7 +219,6 @@ function buildCategoriesViewHtml(categories,
 // from the server
 function buildAndShowMenuItemsHTML (categoryMenuItems) {
 
-  console.log(categoryMenuItems);
   // Load title snippet of menu items page
   $ajaxUtils.sendGetRequest(
     menuItemsTitleHtml,
