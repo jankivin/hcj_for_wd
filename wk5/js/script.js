@@ -96,8 +96,6 @@ $ajaxUtils.sendGetRequest(
 // returned from the server.
 function buildAndShowHomeHTML (categories) {
   
-  console.log("Kategoriat" + categories);
-  console.log(homeHtmlUrl);
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
     homeHtmlUrl,
@@ -106,6 +104,8 @@ function buildAndShowHomeHTML (categories) {
       // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
       // variable's name implies it expects.
+      console.log("Kategoriat" + categories);
+      console.log("Kotiosoite " + homeHtml);
       var chosenCategoryShortName = chooseRandomCategory(categories);
       
 
