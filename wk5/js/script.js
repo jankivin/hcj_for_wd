@@ -96,6 +96,7 @@ $ajaxUtils.sendGetRequest(
 // returned from the server.
 function buildAndShowHomeHTML (categories) {
   
+  console.log("Kategoriat" + categories);
   console.log(homeHtmlUrl);
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
@@ -119,7 +120,6 @@ function buildAndShowHomeHTML (categories) {
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet.
       // 
-      var html1 = categoryHtml;
       console.log(chosenCategoryShortName);
       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", chosenCategoryShortName.catShortName);
       
